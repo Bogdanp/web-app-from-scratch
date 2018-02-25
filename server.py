@@ -16,7 +16,7 @@ Content-length: {content_length}
 """.replace("\n", "\r\n")
 
 METHOD_NOT_ALLOWED_RESPONSE = b"""\
-HTTP/1.1 403 Method Not Allowed
+HTTP/1.1 405 Method Not Allowed
 Content-type: text/plain
 Content-length: 17
 
