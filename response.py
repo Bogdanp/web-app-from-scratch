@@ -10,7 +10,7 @@ class Response:
     """An HTTP response.
 
     Parameters:
-      status: The resposne status line (eg. "200 OK").
+      status: The response status line (eg. "200 OK").
       headers: The response headers.
       body: A file containing the response body.
       content: A string representing the response body.  If this is
