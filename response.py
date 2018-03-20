@@ -20,7 +20,7 @@ class Response:
 
     def __init__(
             self,
-            status: str,
+            status: str = "200 OK",
             headers: typing.Optional[Headers] = None,
             body: typing.Optional[typing.IO] = None,
             content: typing.Optional[str] = None,
