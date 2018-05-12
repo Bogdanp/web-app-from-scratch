@@ -14,12 +14,14 @@ There is a tag for each part of the series:
 1. [`part-01`][part-1] -- A simple file server.
 1. [`part-02`][part-2] -- Abstractions!
 1. [`part-03`][part-3] -- Handlers and Middleware.
-1. `part-04` -- Coming soon...
+1. [`part-04`][part-4] -- Application and Router.
+1. `part-05` -- Coming soon...
 
 
 [part-1]: https://defn.io/2018/02/25/web-app-from-scratch-01/
 [part-2]: https://defn.io/2018/03/04/web-app-from-scratch-02/
 [part-3]: https://defn.io/2018/03/20/web-app-from-scratch-03/
+[part-4]: https://defn.io/2018/05/12/web-app-from-scratch-04/
 
 
 ## Type-checking
