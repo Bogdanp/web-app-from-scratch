@@ -6,6 +6,7 @@ application from scratch in Python.
 You'll need Python 3.6+ to run any of this code.  Start by reading
 `server.py`.
 
+
 # Tags
 
 There is a tag for each part of the series:
@@ -21,6 +22,13 @@ There is a tag for each part of the series:
 [part-3]: https://defn.io/2018/03/20/web-app-from-scratch-03/
 
 
+## Type-checking
+
+This repo uses Python 3 type annotations which can be type-checked
+using [mypy].  Run `pip install mypy` and then `mypy server.py` to
+type check the code.
+
+
 ## License
 
 web-app-from-scratch is licensed under Apache 2.0.  Please see
@@ -28,3 +36,4 @@ web-app-from-scratch is licensed under Apache 2.0.  Please see
 
 
 [LICENSE]: https://github.com/Bogdanp/falcon_sugar/blob/master/LICENSE
+[mypy]: https://mypy.readthedocs.io

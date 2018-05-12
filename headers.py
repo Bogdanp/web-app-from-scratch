@@ -1,29 +1,32 @@
-import typing
-
 from collections import defaultdict
 
 
-HeadersDict = typing.Dict[str, typing.List[str]]
-HeadersGenerator = typing.Generator[typing.Tuple[str, str], None, None]
-
-
 class Headers:
-    def __init__(self) -> None:
+    """A mapping from lower-cased header names to lists of string values.
+    """
+
+    def __init__(self):
         self._headers = defaultdict(list)
 
-    def add(self, name: str, value: str) -> None:
+    def add(self, name, value):
         self._headers[name.lower()].append(value)
 
-    def get_all(self, name: str) -> typing.List[str]:
+    def get_all(self, name):
         return self._headers[name.lower()]
 
-    def get(self, name: str, default: typing.Optional[str] = None) -> typing.Optional[str]:
+    def get(self, name, default=None):
         try:
             return self.get_all(name)[-1]
         except IndexError:
             return default
 
-    def __iter__(self) -> HeadersGenerator:
+    def get_int(self, name):
+        try:
+            return int(self.get(name))
+        except ValueError:
+            return None
+
+    def __iter__(self):
         for name, values in self._headers.items():
             for value in values:
                 yield name, value

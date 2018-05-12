@@ -18,11 +18,15 @@ class Response:
       encoding: An encoding for the content, if provided.
     """
 
+    status: bytes
+    headers: Headers
+    body: typing.IO[bytes]
+
     def __init__(
             self,
             status: str = "200 OK",
             headers: typing.Optional[Headers] = None,
-            body: typing.Optional[typing.IO] = None,
+            body: typing.Optional[typing.IO[bytes]] = None,
             content: typing.Optional[str] = None,
             encoding: str = "utf-8"
     ) -> None:
@@ -40,7 +44,7 @@ class Response:
     def send(self, sock: socket.socket) -> None:
         """Write this response to a socket.
         """
-        content_length = self.headers.get("content-length")
+        content_length = self.headers.get_int("content-length")
         if content_length is None:
             try:
                 body_stat = os.fstat(self.body.fileno())
@@ -51,7 +55,7 @@ class Response:
                 self.body.seek(0, os.SEEK_SET)
 
             if content_length > 0:
-                self.headers.add("content-length", content_length)
+                self.headers.add("content-length", str(content_length))
 
         headers = b"HTTP/1.1 " + self.status + b"\r\n"
         for header_name, header_value in self.headers:
@@ -59,4 +63,4 @@ class Response:
 
         sock.sendall(headers + b"\r\n")
         if content_length > 0:
-            sock.sendfile(self.body)
+            sock.sendfile(self.body)  # type: ignore
