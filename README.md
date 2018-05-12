@@ -25,8 +25,13 @@ There is a tag for each part of the series:
 ## Type-checking
 
 This repo uses Python 3 type annotations which can be type-checked
-using [mypy].  Run `pip install mypy` and then `mypy server.py` to
+using [mypy].  Run `pip install mypy` and then `mypy scratch` to
 type check the code.
+
+
+## Testing
+
+Run `pip install pytest` and then `py.test`.
 
 
 ## License

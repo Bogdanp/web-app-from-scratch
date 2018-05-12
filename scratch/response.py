@@ -3,7 +3,7 @@ import os
 import socket
 import typing
 
-from headers import Headers
+from .headers import Headers
 
 
 class Response:

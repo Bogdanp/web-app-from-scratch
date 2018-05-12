@@ -23,7 +23,7 @@ class Headers:
     def get_int(self, name):
         try:
             return int(self.get(name))
-        except ValueError:
+        except (TypeError, ValueError):
             return None
 
     def __iter__(self):

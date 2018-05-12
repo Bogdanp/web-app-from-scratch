@@ -2,7 +2,7 @@ import io
 import socket
 import typing
 
-from headers import Headers
+from .headers import Headers
 
 
 class BodyReader(io.IOBase):
@@ -11,7 +11,7 @@ class BodyReader(io.IOBase):
         self._buff = buff
         self._bufsize = bufsize
 
-    def readable(self) -> bool:
+    def readable(self) -> bool:  # pragma: no cover
         return True
 
     def read(self, n: int) -> bytes:
@@ -63,7 +63,7 @@ class Request(typing.NamedTuple):
                 break
 
             try:
-                name, _, value = line.decode("ascii").partition(":")
+                name, value = line.decode("ascii").split(":", 1)
                 headers.add(name, value.lstrip())
             except ValueError:
                 raise ValueError(f"Malformed header line {line!r}.")
@@ -92,5 +92,5 @@ def iter_lines(sock: socket.socket, bufsize: int = 16_384) -> typing.Generator[b
                     return buff
 
                 yield line
-            except IndexError:
+            except (IndexError, ValueError):
                 break
