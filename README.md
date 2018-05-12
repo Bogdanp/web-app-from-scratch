@@ -18,7 +18,7 @@ There is a tag for each part of the series:
 
 [part-1]: https://defn.io/2018/02/25/web-app-from-scratch-01/
 [part-2]: https://defn.io/2018/03/04/web-app-from-scratch-02/
-[part-3]: https://defn.io/2018/03/04/web-app-from-scratch-03/
+[part-3]: https://defn.io/2018/03/20/web-app-from-scratch-03/
 
 
 ## License
