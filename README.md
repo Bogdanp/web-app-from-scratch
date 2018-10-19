@@ -4,7 +4,7 @@ Supporting material for my blog post series on writing a web
 application from scratch in Python.
 
 You'll need Python 3.6+ to run any of this code.  Start by reading
-`scratch/server.py`.
+`scratch/server.py`.  Run the application with `python -m scratch`.
 
 
 # Tags
